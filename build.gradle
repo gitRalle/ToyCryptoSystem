@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName = 'ToyCryptoSystem'
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ["src/main/java"]
+        }
+        resources {
+            srcDirs = ["src/main/resources"]
+            includes = ["**/*.txt"]
+        }
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: 'at.favre.lib', name: 'bytes', version: '1.3.0'
+    compile group : "org.apache.commons", name: "commons-lang3", version: "3.10"
+    compile group: 'org.foundationdb', name: 'fdb-java', version: '6.2.10'
+}
+
